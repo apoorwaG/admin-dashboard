@@ -1,5 +1,6 @@
 html {
     font-size: 12px;
+    font-family: sans-serif;
 }
 
 body {
@@ -9,7 +10,7 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 5fr;
     height: 100%;
 }
 
@@ -17,6 +18,14 @@ body {
     border: 1px solid black;
 }
 
+.header, .logo {
+    padding-top: 2rem;
+}
+
+.header > * {
+    padding-left: 2rem;
+    padding-right: 3rem;
+}
 
 .sidebar {
     grid-column: 1;
@@ -35,39 +44,145 @@ body {
     padding: 1rem 0;
 }
 
-.navigation .part2 {
-    margin-top: 10%;
+.navigation div:nth-child(7) {
+    margin-top: 2rem;
 }
 
 .rightSide {
     grid-row: 1 / 3;
     display: grid;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: auto 1fr;
 }
 
 .header {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: min-content min-content;
+    row-gap: 2rem;
+    /* grid-auto-rows: min(min-content + 5%, 4rem); */
     font-size: 2rem;
+
 }
 
 .header .topHalf {
     display: grid;
-    grid-template-columns: 6fr 4fr;
+    grid-template-columns: 7fr 3fr;
     column-gap: 4rem;
+    align-items: center;
 }
 
 .topHalf .search {
     display: flex;
+    column-gap: 2rem;
 }
 
 .search input {
     flex: 1;
-    max-width: 580px;
+    max-width: 650px;
+    height: 2.5rem;
+    font: inherit;
+    font-size: 100%;
+    border-style: none;
+    border-radius: 10px;
+    background-color: rgb(221, 223, 224);
 }
 
 .topHalf .userInfo {
     display: flex;
     justify-content: end;
     column-gap: 2rem;
+}
+
+.bottomHalf {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    align-items: center;
+    column-gap: 4rem;
+}
+
+.bottomHalf .greeting {
+    display: grid;
+    grid-template-columns: min-content min-content;
+    column-gap: 8rem;
+}
+
+.greeting .userId {
+    width: max-content;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.bottomHalf .create {
+    justify-self: end;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(120px, 150px));
+    column-gap: 2rem;
+}
+
+.create .button {
+    text-align: center;
+    color: white;
+    background-color: rgb(43, 140, 196);
+    padding: 1rem;
+    border-radius: 20px;
+    font-size: 1.5rem;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    column-gap: clamp(20px, 10%, 30px);
+}
+
+.content .projects {
+    padding-left: 2rem;
+    padding-top: 5rem;
+}
+
+.projects > .title,
+.otherBar > div > .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color:rgb(78, 78, 78)
+}
+
+.content .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-auto-rows: 200px;
+    row-gap: 5rem;
+    column-gap: 5rem;
+    border: 1px solid black;
+    font-size: 1.2rem;
+}
+
+.content .cards .card {
+    padding: 1rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 2px 8px rgb(71, 71, 71);
+    display: grid;
+    grid-template-rows: 2fr 5fr 1fr;
+}
+
+.card .title {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.card .options {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 5%;
+    justify-content: end;
+}
+
+.content .otherBar {
+    justify-self: end;
+    padding-top: 5rem;
+    display: grid;
+    grid-template-rows: repeat(2, minmax(250px, 300px));
+    grid-auto-columns: minmax(300px, 350px);
+    
 }
