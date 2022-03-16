@@ -11,6 +11,7 @@ body {
 .container {
     display: grid;
     grid-template-columns: 1fr 5fr;
+    /* grid-template-columns: max-content max-content; */
     height: 100%;
 }
 
@@ -31,9 +32,23 @@ body {
     grid-column: 1;
     grid-row: 1 / 3;
     display: grid;
-    grid-template-rows: 1fr 4fr 4fr;
+    grid-template-rows: min-content min-content 200px;
     font-size: 2rem;
-    padding-left: 1rem;
+    padding-left: 3rem;
+    padding-right: 2rem;
+    row-gap: 4rem;
+}
+
+.logo {
+    display: grid;
+    grid-template-columns: min-content min-content;
+    column-gap: 2rem;
+    font-weight: bold;
+    align-items: center;
+}
+
+.logo .dashLogo::after {
+    content: url(./icons/view-dashboard.svg);
 }
 
 .navigation {
@@ -42,10 +57,55 @@ body {
 
 .navigation > div {
     padding: 1rem 0;
+    display: grid;
+    grid-template-columns: min-content min-content;
+    column-gap: 2rem;
+}
+
+.navigation > div:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 .navigation div:nth-child(7) {
     margin-top: 2rem;
+}
+
+
+.navigation .homeIcon::after {
+    content: url(./icons/home.svg);
+}
+
+.navigation .profileIcon::after {
+    content: url(./icons/card-account-details-outline.svg);
+}
+
+.navigation .messageIcon::after {
+    content: url(./icons/message-reply-text.svg);
+}
+
+.navigation .historyIcon::after {
+    content: url(./icons/clock.svg);
+}
+
+.navigation .taskIcon::after {
+    content: url(./icons/calendar-check-outline.svg);
+}
+
+.navigation .communityIcon::after {
+    content: url(./icons/account-group.svg);
+}
+
+.navigation .settingsIcon::after {
+    content: url(./icons/cog.svg);
+}
+
+.navigation .supportIcon::after {
+    content: url(./icons/help-circle.svg);
+}
+
+.navigation .privacyIcon::after {
+    content: url(./icons/shield-account.svg);
 }
 
 .rightSide {
@@ -131,11 +191,16 @@ body {
     display: grid;
     grid-template-columns: 3fr 1fr;
     column-gap: clamp(20px, 10%, 30px);
+    padding-bottom: 5rem;
 }
 
 .content .projects {
     padding-left: 2rem;
     padding-top: 5rem;
+}
+
+.content .otherBar {
+    padding-right: 3rem;
 }
 
 .projects > .title,
@@ -160,7 +225,7 @@ body {
     padding: 1rem;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 1px 2px 8px rgb(71, 71, 71);
+    box-shadow: 0 2px 5px gray;
     display: grid;
     grid-template-rows: 2fr 5fr 1fr;
 }
@@ -182,7 +247,32 @@ body {
     justify-self: end;
     padding-top: 5rem;
     display: grid;
-    grid-template-rows: repeat(2, minmax(250px, 300px));
-    grid-auto-columns: minmax(300px, 350px);
-    
+    grid-template-rows: repeat(2, minmax(250px, min-content));
+    grid-auto-columns: minmax(250px, 300px);
+    row-gap: 2rem;
+}
+
+.otherBar .card {
+    font-size: 1.05rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 5px gray;
+    display: grid;
+    row-gap: 2rem;
+}
+
+.otherBar .card .subtitle {
+    font-weight: bold;
+    color:rgb(71, 71, 71)
+}
+
+.trending .user {
+    display: grid;
+    grid-template-columns: min-content max-content;
+    column-gap: 1rem;
+}
+
+.trending .user .userName {
+    font-weight:bolder;
 }
