@@ -47,8 +47,9 @@ body {
     align-items: center;
 }
 
-.logo .dashLogo::after {
-    content: url(./icons/view-dashboard.svg);
+.dashLogo {
+    width: 3rem;
+    height: auto;
 }
 
 .navigation {
@@ -59,6 +60,7 @@ body {
     padding: 1rem 0;
     display: grid;
     grid-template-columns: min-content min-content;
+    align-items: center;
     column-gap: 2rem;
 }
 
@@ -69,43 +71,6 @@ body {
 
 .navigation div:nth-child(7) {
     margin-top: 2rem;
-}
-
-
-.navigation .homeIcon::after {
-    content: url(./icons/home.svg);
-}
-
-.navigation .profileIcon::after {
-    content: url(./icons/card-account-details-outline.svg);
-}
-
-.navigation .messageIcon::after {
-    content: url(./icons/message-reply-text.svg);
-}
-
-.navigation .historyIcon::after {
-    content: url(./icons/clock.svg);
-}
-
-.navigation .taskIcon::after {
-    content: url(./icons/calendar-check-outline.svg);
-}
-
-.navigation .communityIcon::after {
-    content: url(./icons/account-group.svg);
-}
-
-.navigation .settingsIcon::after {
-    content: url(./icons/cog.svg);
-}
-
-.navigation .supportIcon::after {
-    content: url(./icons/help-circle.svg);
-}
-
-.navigation .privacyIcon::after {
-    content: url(./icons/shield-account.svg);
 }
 
 .rightSide {
@@ -133,6 +98,11 @@ body {
 .topHalf .search {
     display: flex;
     column-gap: 2rem;
+    align-items: center;
+}
+
+.search label::after {
+    content: url(./icons/magnify.svg);
 }
 
 .search input {
