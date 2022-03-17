@@ -250,12 +250,14 @@ body {
 .content .cards .card {
     padding: 1rem;
     padding-top: 4rem;
+    padding-left: 2rem;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 2px 5px gray;
     display: grid;
     grid-template-rows: 2fr 5fr 1fr;
     align-content: center;
+    background: linear-gradient(to right, orange 2%, white 2%);
 }
 
 .card .title {
