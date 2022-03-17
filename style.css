@@ -50,6 +50,12 @@ body {
     background-color: var(--sidebar-color);
 }
 
+/* .header, 
+.sidebar {
+    position: sticky;
+    top: 1px;
+} */
+
 .logo {
     display: grid;
     grid-template-columns: min-content min-content;
@@ -211,7 +217,7 @@ body {
     grid-template-columns: 3fr 1fr;
     column-gap: clamp(20px, 10%, 30px);
     padding-bottom: 5rem;
-    /* overflow: scroll; */
+    overflow: scroll;
 }
 
 .content .projects {
@@ -268,6 +274,10 @@ body {
 
 .card .options div:hover {
     cursor: pointer;
+}
+
+.card .options div:active {
+    transform: scale(0.90);
 }
 
 .content .otherBar {
